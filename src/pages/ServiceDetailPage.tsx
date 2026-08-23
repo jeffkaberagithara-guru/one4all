@@ -51,7 +51,8 @@ export default function ServiceDetailPage({ slug }: ServiceDetailPageProps) {
             <Reveal>
               <MediaFrame
                 variant={service.variant}
-                alt={'Technische Illustration zum Leistungsbereich ' + service.name}
+                src={service.image}
+                alt={'Praxisaufnahme zum Leistungsbereich ' + service.name}
                 ratio="4 / 5"
                 caption={'Leistung ' + service.num}
               />

@@ -9,7 +9,7 @@ import { MediaFrame } from '../ui/MediaFrame'
 import { Reveal, MaskReveal } from '../ui/Reveal'
 import { SectionLabel } from '../ui/SectionLabel'
 
-export function ServicesIndex() {
+export function ServicesIndex({ showLabel = true }: { showLabel?: boolean }) {
   const listRef = useRef<HTMLDivElement>(null)
   const [hovered, setHovered] = useState<number | null>(null)
   const [expanded, setExpanded] = useState<number | null>(null)
@@ -31,9 +31,9 @@ export function ServicesIndex() {
   return (
     <section id="leistungen" aria-labelledby="leistungen-heading" className="scroll-mt-28 py-24 lg:py-36">
       <div className="container-x">
-        <SectionLabel index="02" title="Leistungen" />
+        {showLabel ? <SectionLabel index="02" title="Leistungen" /> : null}
 
-        <div className="mt-12 flex flex-col justify-between gap-8 lg:mt-16 lg:flex-row lg:items-end">
+        <div className={'flex flex-col justify-between gap-8 lg:flex-row lg:items-end' + (showLabel ? ' mt-12 lg:mt-16' : '')}>
           <MaskReveal>
             <h2 id="leistungen-heading" className="h-section font-display">
               Was wir
@@ -87,7 +87,8 @@ export function ServicesIndex() {
                       <p className="text-sm leading-relaxed text-muted">{service.tagline}</p>
                       <MediaFrame
                         variant={service.variant}
-                        alt={'Technische Illustration zu ' + service.name}
+                        src={service.image}
+                        alt={'Praxisaufnahme — ' + service.name}
                         ratio="16 / 10"
                         className="mt-5"
                       />
@@ -137,6 +138,7 @@ export function ServicesIndex() {
                 >
                   <MediaFrame
                     variant={services[hovered].variant}
+                    src={services[hovered].image}
                     alt=""
                     ratio="3 / 2"
                     caption={services[hovered].name.toUpperCase()}

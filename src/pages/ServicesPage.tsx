@@ -26,7 +26,7 @@ export default function ServicesPage() {
         }
         intro="Von der ersten Idee bis zur Inbetriebnahme und darüber hinaus – zwölf Leistungsbereiche entlang des gesamten Lebenszyklus einer Anlage."
       />
-      <ServicesIndex />
+      <ServicesIndex showLabel={false} />
       <Specialization />
       <ContactSection />
     </>

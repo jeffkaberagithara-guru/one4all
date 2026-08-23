@@ -8,11 +8,13 @@ export interface Service {
   body: string[]
   capabilities: string[]
   variant: MediaVariant
+  image?: string
 }
 
 export const services: Service[] = [
   {
     slug: 'projektierung',
+    image: '/images/planning.jpg',
     num: '01',
     name: 'Projektierung & Planung',
     tagline: 'Von der ersten Idee bis zur technischen Lösung.',
@@ -32,6 +34,7 @@ export const services: Service[] = [
   },
   {
     slug: 'kaeltetechnik',
+    image: '/images/project1.jpg',
     num: '02',
     name: 'Kältetechnik',
     tagline: 'Effiziente Kältelösungen für unterschiedliche Anwendungen.',
@@ -52,6 +55,7 @@ export const services: Service[] = [
   },
   {
     slug: 'klimatechnik',
+    image: '/images/contact.jpg',
     num: '03',
     name: 'Klimatechnik',
     tagline: 'Raumklima mit technischer Präzision.',
@@ -73,6 +77,7 @@ export const services: Service[] = [
   },
   {
     slug: 'vrf-systeme',
+    image: '/images/vrf.jpg',
     num: '04',
     name: 'VRF-Systeme',
     tagline: 'Flexible Klimatechnik für anspruchsvolle Gebäude.',
@@ -91,6 +96,7 @@ export const services: Service[] = [
   },
   {
     slug: 'kaltwassererzeuger',
+    image: '/images/systems.jpg',
     num: '05',
     name: 'Kaltwassererzeuger',
     tagline: 'Zentrale Kälte für komplexe Anforderungen.',
@@ -111,6 +117,7 @@ export const services: Service[] = [
   },
   {
     slug: 'waermepumpen',
+    image: '/images/heating.jpg',
     num: '06',
     name: 'Wärmepumpen',
     tagline: 'Effiziente Systeme für moderne Gebäude.',
@@ -123,6 +130,7 @@ export const services: Service[] = [
   },
   {
     slug: 'gewerbekaelte',
+    image: '/images/edv.jpg',
     num: '07',
     name: 'Gewerbekälte',
     tagline: 'Kälte, wenn Temperaturkontrolle entscheidend ist.',
@@ -142,6 +150,7 @@ export const services: Service[] = [
   },
   {
     slug: 'wartung',
+    image: '/images/mobile-workshop.jpg',
     num: '08',
     name: 'Wartung & Überprüfung',
     tagline: 'Bestehende Anlagen zuverlässig betreiben.',
@@ -161,6 +170,7 @@ export const services: Service[] = [
   },
   {
     slug: 'reparatur',
+    image: '/images/experience.jpg',
     num: '09',
     name: 'Reparatur & Störungsbehebung',
     tagline: 'Wenn Technik nicht wie geplant funktioniert.',
@@ -173,6 +183,7 @@ export const services: Service[] = [
   },
   {
     slug: 'neuinstallationen',
+    image: '/images/installation.jpg',
     num: '10',
     name: 'Neuinstallationen & Erweiterungen',
     tagline: 'Neue Systeme. Bestehende Anlagen. Weitergedacht.',
@@ -192,6 +203,7 @@ export const services: Service[] = [
   },
   {
     slug: 'systemunterlagen',
+    image: '/images/planning1.jpg',
     num: '11',
     name: 'Systemunterlagen',
     tagline: 'Technik verständlich dokumentiert.',
@@ -209,6 +221,7 @@ export const services: Service[] = [
   },
   {
     slug: 'schulungen',
+    image: '/images/company.jpg',
     num: '12',
     name: 'Anlagen- & Systemschulungen',
     tagline: 'Wissen für einen sicheren Anlagenbetrieb.',
