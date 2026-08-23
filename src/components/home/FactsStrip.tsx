@@ -8,27 +8,25 @@ function FactValue({ value }: { value: string }) {
   const reduced = useReducedMotion()
   const ref = useRef<HTMLSpanElement>(null)
   const inView = useInView(ref, { once: true, margin: '-10% 0px' })
-  const numeric = value.match(/^(\d+)(\+?)$/)
-  const [display, setDisplay] = useState(() => (!numeric || reduced ? value : '0'))
+  const raw = /^\d+$/.test(value) ? value : value.endsWith('+') ? value.slice(0, -1) : null
+  const suffix = value.endsWith('+') ? '+' : ''
+  const target = raw !== null ? Number(raw) : null
+  const [display, setDisplay] = useState(() => (target === null || reduced ? value : '0'))
 
   useEffect(() => {
-    if (!numeric || reduced || !inView) return
-    const controls = animate(0, Number(numeric[1]), {
+    if (target === null || reduced || !inView) return
+    const controls = animate(0, target, {
       duration: 1.8,
       ease: EASE,
       onUpdate: (v) => setDisplay(String(Math.round(v))),
     })
     return () => controls.stop()
-  }, [inView, numeric, reduced])
-
-  if (!numeric) {
-    return <span ref={ref}>{value}</span>
-  }
+  }, [inView, reduced, target])
 
   return (
-    <span ref={ref} className="tabular-nums">
+    <span ref={ref} className={target !== null ? 'tabular-nums' : undefined}>
       {display}
-      {numeric[2]}
+      {suffix}
     </span>
   )
 }

@@ -30,7 +30,7 @@ export function MarqueeStrip() {
   return (
     <section
       aria-label="Unsere Kernbereiche"
-      className="marquee-paused-on-hover overflow-hidden border-b border-t border-white/10 bg-coal py-8 text-paper lg:py-10"
+      className="marquee-paused-on-hover overflow-hidden border-b border-white/10 bg-coal py-8 text-paper lg:py-10"
     >
       <div className="animate-marquee-x flex w-max will-change-transform">
         <Row />
