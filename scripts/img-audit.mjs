@@ -46,6 +46,9 @@ async function auditRoute(page, url, viewportLabel) {
     })
   })
   await page.waitForLoadState('networkidle').catch(() => {})
+  await page
+    .waitForFunction(() => [...document.images].every((i) => i.complete), { timeout: 20000 })
+    .catch(() => {})
   await page.waitForTimeout(700)
 
   const report = await page.evaluate(() => {
@@ -102,9 +105,11 @@ for (const base of bases) {
     const page = await ctx.newPage()
     // discover routes from homepage
     await page.goto(base + '/', { waitUntil: 'networkidle', timeout: 25000 }).catch(() => {})
+    const basePath = new URL(base).pathname.replace(/\/$/, '')
     const hrefs = await page.evaluate(() =>
       [...document.querySelectorAll('a[href^="/"]')].map((a) => a.getAttribute('href')))
     const routes = [...new Set(['/', ...hrefs])]
+      .map((h) => (basePath && h.startsWith(basePath + '/') ? h.slice(basePath.length) : h))
       .filter((h) => !h.startsWith('/images'))
       .slice(0, 40)
     let totals = { imgs: 0, broken: 0 }
