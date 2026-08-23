@@ -2,6 +2,7 @@ import { MediaFrame } from '../ui/MediaFrame'
 import { Reveal, MaskReveal } from '../ui/Reveal'
 import { SectionLabel } from '../ui/SectionLabel'
 import { site } from '../../data/site'
+import { images } from '../../data/images'
 
 export function FounderSection() {
   return (
@@ -39,7 +40,8 @@ export function FounderSection() {
             <MediaFrame
               variant="plan"
               ratio="3 / 4"
-              alt="Technische Unterlagen und Werkstattumgebung – atmosphärische Schwarzweiß-Darstellung statt Porträt"
+              alt="Mobile Werkstatt von One4All – Technik für den Einsatz vor Ort"
+              src={images.founderWorkshop}
               caption="Technik & Werkstatt"
             />
           </Reveal>

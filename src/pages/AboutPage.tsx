@@ -8,6 +8,7 @@ import { MediaFrame } from '../components/ui/MediaFrame'
 import { Reveal, MaskReveal } from '../components/ui/Reveal'
 import { ButtonLink } from '../components/ui/buttons'
 import { usePageSeo } from '../hooks/usePageSeo'
+import { images } from '../data/images'
 
 export default function AboutPage() {
   usePageSeo({
@@ -32,7 +33,7 @@ export default function AboutPage() {
         intro="Ein Unternehmen, das Technik nicht als Selbstzweck versteht – sondern als Grundlage für verlässlichen Betrieb."
       />
 
-      <AboutPreview />
+      <AboutPreview showLabel={false} />
 
       <section aria-labelledby="anspruch-heading" className="border-y border-line bg-surface py-24 lg:py-32">
         <div className="container-x grid grid-cols-1 gap-14 lg:grid-cols-12 lg:gap-x-8">
@@ -56,7 +57,7 @@ export default function AboutPage() {
             </Reveal>
           </div>
           <Reveal delay={0.2} className="lg:col-span-4 lg:col-start-9">
-            <MediaFrame variant="plan" ratio="3 / 4" alt="Technische Planungsunterlagen" caption="Planung" />
+            <MediaFrame variant="plan" ratio="3 / 4" alt="One4All Kälte & Klimatechnik – Unternehmen und Technik" src={images.companyClaim} caption="Unternehmen" />
           </Reveal>
         </div>
       </section>

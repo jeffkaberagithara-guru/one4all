@@ -1,5 +1,7 @@
 import { ButtonLink } from '../ui/buttons'
+import { MediaFrame } from '../ui/MediaFrame'
 import { Reveal } from '../ui/Reveal'
+import { images } from '../../data/images'
 
 export function CriticalCooling() {
   return (
@@ -25,6 +27,17 @@ export function CriticalCooling() {
             </ButtonLink>
           </Reveal>
         </div>
+
+        <Reveal delay={0.1} className="mt-14 lg:mt-20">
+          <MediaFrame
+            variant="control"
+            src={images.criticalCooling}
+            alt="Anlagentechnik der EDV- und Prozesskühlung von One4All"
+            ratio="21 / 9"
+            caption="EDV-Kühlung — Anlagentechnik"
+            className="bg-transparent"
+          />
+        </Reveal>
       </div>
     </section>
   )

@@ -5,6 +5,7 @@ import { ButtonLink, TextButton } from '../ui/buttons'
 import { VideoFrame } from '../ui/VideoFrame'
 import { MaskReveal } from '../ui/Reveal'
 import { EASE } from '../../lib/motion'
+import { images } from '../../data/images'
 
 const headline = ['Kälte.', 'Klima.', 'Präzision.']
 
@@ -74,9 +75,11 @@ export function Hero() {
             >
               <VideoFrame
                 poster="rooftop"
-                alt="Dach eines modernen Gebäudes mit zentraler Klimatechnik – Videoplatzhalter für eine Filmszene"
+                alt="Kälte- und Klimatechnik im Einsatz – Anlagenfoto One4All"
+                image={images.heroRooftop}
+                priority
                 ratio="4 / 3"
-                label="Film 01 — Loop"
+                label="One4All — Anlagentechnik"
                 className="absolute inset-0"
               />
             </motion.div>

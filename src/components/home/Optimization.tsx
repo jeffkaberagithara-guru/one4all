@@ -1,5 +1,7 @@
 import { ArrowDown } from 'lucide-react'
 import { Reveal, MaskReveal } from '../ui/Reveal'
+import { MediaFrame } from '../ui/MediaFrame'
+import { images } from '../../data/images'
 
 const stages = ['Bestand', 'Analyse', 'Optimierung', 'Betrieb']
 
@@ -45,6 +47,16 @@ export function Optimization() {
           </ol>
         </Reveal>
       </div>
+
+      <Reveal delay={0.15} className="container-x mt-14 lg:mt-20">
+        <MediaFrame
+          variant="room"
+          src={images.optimizationPlant}
+          alt="Bestehende Anlagentechnik im Betrieb – Wartung und Optimierung durch One4All"
+          ratio="21 / 9"
+          caption="Betrieb — Anlagentechnik"
+        />
+      </Reveal>
     </section>
   )
 }

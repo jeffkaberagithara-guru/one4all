@@ -1,5 +1,6 @@
 import { VideoFrame } from '../ui/VideoFrame'
 import { Reveal } from '../ui/Reveal'
+import { images } from '../../data/images'
 
 export function FilmBreak() {
   return (
@@ -18,9 +19,10 @@ export function FilmBreak() {
         <Reveal delay={0.18} className="mt-14 lg:mt-20">
           <VideoFrame
             poster="pipes"
-            alt="Kältemittelleitungen und Ventile im Detail – Platzhalter für einen technischen Filmloop"
+            alt="Anlagentechnik von One4All – Kälte- und Klimasysteme im Detail"
+            image={images.filmPipes}
             ratio="16 / 9"
-            label="Film 02 — Technik"
+            label="Anlagentechnik — Detail"
           />
         </Reveal>
       </div>

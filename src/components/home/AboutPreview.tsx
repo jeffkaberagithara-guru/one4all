@@ -2,15 +2,16 @@ import { ButtonLink } from '../ui/buttons'
 import { MediaFrame } from '../ui/MediaFrame'
 import { Reveal, MaskReveal } from '../ui/Reveal'
 import { SectionLabel } from '../ui/SectionLabel'
+import { images } from '../../data/images'
 
-export function AboutPreview() {
+export function AboutPreview({ showLabel = true }: { showLabel?: boolean }) {
   return (
     <section id="ueber-uns" aria-labelledby="ueber-uns-heading" className="scroll-mt-28 py-24 lg:py-36">
       <div className="container-x">
-        <SectionLabel index="01" title="Über uns" />
+        {showLabel ? <SectionLabel index="01" title="Über uns" /> : null}
 
         <MaskReveal delay={0.1}>
-          <h2 id="ueber-uns-heading" className="h-section mt-12 font-display lg:mt-16">
+          <h2 id="ueber-uns-heading" className={'h-section font-display' + (showLabel ? ' mt-12 lg:mt-16' : '')}>
             Wer wir sind
           </h2>
         </MaskReveal>
@@ -20,8 +21,9 @@ export function AboutPreview() {
             <MediaFrame
               variant="room"
               ratio="4 / 5"
-              alt="Technischer Raum mit Kälte- und Klimaaggregaten – monochrome Architektur- und Anlagenaufnahme"
-              caption="Technikraum"
+              alt="One4All Kälte & Klimatechnik – Einblick in unsere Arbeit"
+              src={images.aboutRoom}
+              caption="Aus der Praxis"
             />
           </Reveal>
 

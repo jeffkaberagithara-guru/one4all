@@ -3,6 +3,7 @@ import { ArrowUpRight } from 'lucide-react'
 import { MediaFrame } from '../ui/MediaFrame'
 import { Reveal, MaskReveal } from '../ui/Reveal'
 import { SectionLabel } from '../ui/SectionLabel'
+import { images } from '../../data/images'
 
 const focusAreas = [
   { word: 'Direktverdampfung.', to: '/leistungen/klimatechnik', align: '' },
@@ -52,7 +53,8 @@ export function Specialization() {
             <MediaFrame
               variant="units"
               ratio="16 / 9"
-              alt="Außeneinheiten einer modernen Klima- und Kälteanlage in Reihe montiert"
+              alt="VRF-Außeneinheitentechnik – Schwerpunkt der One4All Projektarbeit"
+              src={images.focusUnits}
               caption="Schwerpunkt Technik"
             />
           </Reveal>
