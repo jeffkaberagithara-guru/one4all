@@ -22,6 +22,38 @@
     text-rendering: optimizeLegibility;
   }
 
+  /* Film grain — subtle full-page texture */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 95;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.038;
+  }
+
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(var(--c-steel)) transparent;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border: 3px solid transparent;
+    border-radius: 9999px;
+    background-color: rgb(var(--c-steel));
+    background-clip: content-box;
+  }
+
   ::selection {
     background-color: rgb(var(--c-ink));
     color: rgb(var(--c-paper));
@@ -54,10 +86,12 @@
 
   .h-display {
     @apply font-display font-light leading-[0.98] tracking-tight text-[clamp(3rem,8vw,7.25rem)];
+    text-wrap: balance;
   }
 
   .h-section {
     @apply font-display font-light leading-[1.02] tracking-tight text-[clamp(2.25rem,4.6vw,4.25rem)];
+    text-wrap: balance;
   }
 
   .h-sub {
@@ -92,4 +126,22 @@
   .field-line {
     @apply w-full border-b border-line bg-transparent py-3 text-ink placeholder:text-muted/60 focus:border-ink focus:outline-none transition-colors duration-300;
   }
+}
+
+@keyframes marquee-x {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee-x {
+  animation: marquee-x var(--marquee-duration, 46s) linear infinite;
+}
+
+.marquee-paused-on-hover:hover .animate-marquee-x {
+  animation-play-state: paused;
 }

@@ -1,4 +1,5 @@
-import { motion, useReducedMotion } from 'framer-motion'
+import { useRef } from 'react'
+import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion'
 import { ArrowDown } from 'lucide-react'
 import { ButtonLink, TextButton } from '../ui/buttons'
 import { VideoFrame } from '../ui/VideoFrame'
@@ -9,9 +10,15 @@ const headline = ['Kälte.', 'Klima.', 'Präzision.']
 
 export function Hero() {
   const reduced = useReducedMotion()
+  const sectionRef = useRef<HTMLElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start start', 'end start'],
+  })
+  const mediaY = useTransform(scrollYProgress, [0, 1], ['-3%', '3%'])
 
   return (
-    <section className="relative overflow-hidden pt-28 lg:pt-36" aria-label="Intro">
+    <section ref={sectionRef} className="relative overflow-hidden pt-28 lg:pt-36" aria-label="Intro">
       <div className="container-x relative z-10 grid grid-cols-1 items-start gap-12 pb-14 lg:grid-cols-12 lg:gap-x-8 lg:pb-20">
         <div className="flex min-h-[46vh] flex-col justify-center pt-6 sm:min-h-[54vh] lg:col-span-7 lg:min-h-[64vh] xl:col-span-6">
           <motion.p
@@ -61,13 +68,18 @@ export function Hero() {
             animate={{ clipPath: 'inset(4% 4% 0% 4%)' }}
             transition={{ duration: 1.2, ease: EASE, delay: 0.45 }}
           >
-            <VideoFrame
-              poster="rooftop"
-              alt="Dach eines modernen Gebäudes mit zentraler Klimatechnik – Videoplatzhalter für eine Filmszene"
-              ratio="4 / 3"
-              label="Film 01 — Loop"
-              className="absolute inset-0"
-            />
+            <motion.div
+              className="absolute inset-x-0 -top-[8%] h-[116%] will-change-transform"
+              style={reduced ? undefined : { y: mediaY }}
+            >
+              <VideoFrame
+                poster="rooftop"
+                alt="Dach eines modernen Gebäudes mit zentraler Klimatechnik – Videoplatzhalter für eine Filmszene"
+                ratio="4 / 3"
+                label="Film 01 — Loop"
+                className="absolute inset-0"
+              />
+            </motion.div>
           </motion.div>
         </div>
       </div>

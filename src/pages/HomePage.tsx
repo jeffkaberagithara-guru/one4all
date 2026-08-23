@@ -9,6 +9,7 @@ import { Principles } from '../components/home/Principles'
 import { ProcessTimeline } from '../components/home/ProcessTimeline'
 import { Optimization } from '../components/home/Optimization'
 import { CriticalCooling } from '../components/home/CriticalCooling'
+import { MarqueeStrip } from '../components/home/MarqueeStrip'
 import { Testimonial } from '../components/home/Testimonial'
 import { FounderSection } from '../components/home/FounderSection'
 import { ContactSection } from '../components/home/ContactSection'
@@ -33,6 +34,7 @@ export default function HomePage() {
       <ProcessTimeline />
       <Optimization />
       <CriticalCooling />
+      <MarqueeStrip />
       <Testimonial />
       <FounderSection />
       <ContactSection />
