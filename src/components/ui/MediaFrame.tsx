@@ -1,6 +1,6 @@
 import { useId } from 'react'
 import type { MediaVariant } from '../../lib/types'
-import { cn } from '../../lib/utils'
+import { cn, withBase } from '../../lib/utils'
 import { Facade, Rooftop, Pipes, Units, Control, Macro, Plan, Room, type Scene } from './artwork'
 
 const scenes: Record<MediaVariant, Scene> = {
@@ -35,7 +35,7 @@ export function MediaFrame({ variant, alt, ratio = '4 / 3', caption, className, 
       <figure className={cn('group relative overflow-hidden bg-surface', className)}>
         <div className="absolute inset-0" style={{ aspectRatio: ratio }}>
           <img
-            src={src}
+            src={withBase(src)}
             alt={alt}
             loading={priority ? 'eager' : 'lazy'}
             decoding="async"

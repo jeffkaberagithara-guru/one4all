@@ -1,6 +1,6 @@
 import { Play } from 'lucide-react'
 import type { MediaVariant } from '../../lib/types'
-import { cn } from '../../lib/utils'
+import { cn, withBase } from '../../lib/utils'
 import { MediaFrame } from './MediaFrame'
 
 interface VideoFrameProps {
@@ -44,7 +44,7 @@ export function VideoFrame({
         <div className="absolute inset-0" style={{ aspectRatio: ratio }}>
           {image ? (
             <img
-              src={image}
+              src={withBase(image)}
               alt={alt}
               loading={priority ? 'eager' : 'lazy'}
               decoding="async"
