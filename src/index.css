@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --c-paper: 247 247 245;
+    --c-ink: 17 17 17;
+    --c-muted: 95 95 95;
+    --c-line: 216 216 212;
+    --c-surface: 255 255 255;
+    --c-coal: 14 14 14;
+    --c-steel: 138 138 132;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-paper font-sans text-ink antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: rgb(var(--c-ink));
+    color: rgb(var(--c-paper));
+  }
+
+  :focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-[1720px] px-6 sm:px-10 lg:px-16 xl:px-20;
+  }
+
+  .h-display {
+    @apply font-display font-light leading-[0.98] tracking-tight text-[clamp(3rem,8vw,7.25rem)];
+  }
+
+  .h-section {
+    @apply font-display font-light leading-[1.02] tracking-tight text-[clamp(2.25rem,4.6vw,4.25rem)];
+  }
+
+  .h-sub {
+    @apply font-display font-normal leading-snug tracking-tight text-[clamp(1.5rem,2.6vw,2.25rem)];
+  }
+
+  .label-caps {
+    @apply text-[11px] font-medium uppercase tracking-caps;
+  }
+
+  .label-mono {
+    @apply font-mono text-[11px] uppercase tracking-wider2;
+  }
+
+  .lead {
+    @apply text-base leading-relaxed text-muted md:text-lg md:leading-relaxed;
+  }
+
+  .u-link {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 1px;
+    background-repeat: no-repeat;
+    background-position: left calc(100% - 2px);
+    transition: background-size 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .u-link:hover,
+  .u-link:focus-visible {
+    background-size: 100% 1px;
+  }
+
+  .field-line {
+    @apply w-full border-b border-line bg-transparent py-3 text-ink placeholder:text-muted/60 focus:border-ink focus:outline-none transition-colors duration-300;
+  }
+}

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.one4all-klimatechnik.com/sitemap.xml

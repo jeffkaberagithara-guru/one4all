@@ -1,0 +1,29 @@
+import { VideoFrame } from '../ui/VideoFrame'
+import { Reveal } from '../ui/Reveal'
+
+export function FilmBreak() {
+  return (
+    <section aria-labelledby="film-heading" className="bg-coal text-paper">
+      <div className="container-x py-24 lg:py-36">
+        <p className="label-mono text-paper/50">Technik in Bewegung</p>
+
+        <Reveal delay={0.1}>
+          <h2 id="film-heading" className="h-section mt-8 font-display lg:mt-10">
+            Präzision
+            <br />
+            im Detail.
+          </h2>
+        </Reveal>
+
+        <Reveal delay={0.18} className="mt-14 lg:mt-20">
+          <VideoFrame
+            poster="pipes"
+            alt="Kältemittelleitungen und Ventile im Detail – Platzhalter für einen technischen Filmloop"
+            ratio="16 / 9"
+            label="Film 02 — Technik"
+          />
+        </Reveal>
+      </div>
+    </section>
+  )
+}
