@@ -27,11 +27,10 @@ export function VideoFrame({
   position,
 }: VideoFrameProps) {
   return (
-    <div className={cn('group relative overflow-hidden bg-coal', className)}>
+    <div className={cn('group relative overflow-hidden bg-coal', className)} style={{ aspectRatio: ratio }}>
       {src ? (
         <video
           className="absolute inset-0 h-full w-full object-cover"
-          style={{ aspectRatio: ratio }}
           autoPlay
           muted
           loop
@@ -41,7 +40,7 @@ export function VideoFrame({
           src={src}
         />
       ) : (
-        <div className="absolute inset-0" style={{ aspectRatio: ratio }}>
+        <div className="absolute inset-0">
           {image ? (
             <img
               src={withBase(image)}

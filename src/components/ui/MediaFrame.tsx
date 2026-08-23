@@ -32,8 +32,11 @@ export function MediaFrame({ variant, alt, ratio = '4 / 3', caption, className, 
 
   if (src) {
     return (
-      <figure className={cn('group relative overflow-hidden bg-surface', className)}>
-        <div className="absolute inset-0" style={{ aspectRatio: ratio }}>
+      <figure
+        className={cn('group relative overflow-hidden bg-surface', className)}
+        style={{ aspectRatio: ratio }}
+      >
+        <div className="absolute inset-0">
           <img
             src={withBase(src)}
             alt={alt}
@@ -59,8 +62,13 @@ export function MediaFrame({ variant, alt, ratio = '4 / 3', caption, className, 
   }
 
   return (
-    <figure role="img" aria-label={alt} className={cn('group relative overflow-hidden bg-surface', className)}>
-      <div className="absolute inset-0" style={{ aspectRatio: ratio }}>
+    <figure
+      role="img"
+      aria-label={alt}
+      className={cn('group relative overflow-hidden bg-surface', className)}
+      style={{ aspectRatio: ratio }}
+    >
+      <div className="absolute inset-0">
         <svg
           viewBox="0 0 800 600"
           preserveAspectRatio="xMidYMid slice"
