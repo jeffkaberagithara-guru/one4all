@@ -47,7 +47,7 @@ export function MapBlock() {
                 className="h-[340px] w-full md:h-[420px]"
               />
               <span className="label-mono pointer-events-none absolute bottom-4 left-4 border border-line bg-paper px-3 py-1.5 text-ink/70">
-                ONE4ALL · Alszeile 117/2/2
+                ONE4ALL · {site.address.street}
               </span>
             </div>
           </Reveal>

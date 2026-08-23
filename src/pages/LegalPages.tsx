@@ -16,7 +16,7 @@ export function ImpressumPage() {
   usePageSeo({
     title: 'Impressum',
     description:
-      'Impressum und Unternehmensangaben von One4All Kälte & Klimatechnik e.U., Alszeile 117/2/2, 1170 Wien.',
+      'Impressum und Unternehmensangaben von One4All Kälte & Klimatechnik e.U., Alszeile 117/2/21, 1170 Wien.',
     path: '/impressum',
   })
 
@@ -48,7 +48,12 @@ export function ImpressumPage() {
 
         <LegalSection title="Unternehmensangaben">
           <p>
-            Unternehmensgegenstand: Kälte- und Klimatechnik
+            Unternehmensgegenstand: Kälte- und Klimatechnik sowie Projektüberwachung und
+            -betreuung
+            <br />
+            Inhaber: {site.founder}
+            <br />
+            Gründung: 24.03.2017
             <br />
             Firmenbuchnummer: {site.fn}
             <br />
@@ -58,7 +63,7 @@ export function ImpressumPage() {
           </p>
         </LegalSection>
 
-        <LegalSection title="Aufsichtsbehörde / Rechtsvorschriften">
+        <LegalSection title="Rechtsvorschriften">
           <p>
             Es gelten die Bestimmungen der österreichischen Gewerbeordnung, abrufbar unter
             www.ris.bka.gv.at.

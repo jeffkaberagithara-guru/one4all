@@ -1,8 +1,10 @@
 import { ContactForm } from '../components/contact/ContactForm'
 import { MapBlock } from '../components/contact/MapBlock'
 import { PageHeader } from './partials/PageHeader'
+import { MediaFrame } from '../components/ui/MediaFrame'
 import { Reveal } from '../components/ui/Reveal'
 import { site } from '../data/site'
+import { images } from '../data/images'
 import { usePageSeo } from '../hooks/usePageSeo'
 
 const faqs = [
@@ -28,7 +30,7 @@ export default function ContactPage() {
   usePageSeo({
     title: 'Kontakt',
     description:
-      'Kontakt zu One4All Kälte & Klimatechnik e.U. in Wien: +43 1 960 19 71, office@one4all-klimatechnik.com, Alszeile 117/2/2, 1170 Wien. Projektanfrage direkt online.',
+      'Kontakt zu One4All Kälte & Klimatechnik e.U. in Wien: 01 9711147, office@one4all-klimatechnik.com, Alszeile 117/2/21, 1170 Wien. Projektanfrage direkt online.',
     path: '/kontakt',
   })
 
@@ -82,6 +84,17 @@ export default function ContactPage() {
                   </p>
                 </li>
               </ul>
+            </Reveal>
+
+            <Reveal delay={0.2}>
+              <MediaFrame
+                variant="macro"
+                src={images.contactWorkshop}
+                alt="One4All Kälte & Klimatechnik – Ihr Partner für Kälte und Klima in Wien"
+                ratio="3 / 2"
+                caption="Ihr Partner vor Ort"
+                className="mt-12"
+              />
             </Reveal>
 
             <Reveal delay={0.15}>
