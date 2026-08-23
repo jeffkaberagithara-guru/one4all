@@ -16,12 +16,14 @@ export interface Project {
   implementation: string
   result: string
   heroVariant: MediaVariant
-  gallery: { variant: MediaVariant; alt: string }[]
+  heroImage?: string
+  gallery: { variant: MediaVariant; alt: string; image?: string }[]
 }
 
 export const projects: Project[] = [
   {
     slug: 'klimatisierung-buerogebaeude',
+    heroImage: '/images/contact.jpg',
     num: '01',
     category: 'Klimatechnik',
     title: 'Klimatisierung Bürogebäude',
@@ -41,13 +43,14 @@ export const projects: Project[] = [
       'Jeder Bereich kann seither unabhängig und bedarfsgerecht temperiert werden. Die Anlage wurde vollständig dokumentiert und bildet die Grundlage für die weitere technische Betreuung.',
     heroVariant: 'room',
     gallery: [
-      { variant: 'units', alt: 'Inneneinheiten einer Mehrzonen-Klimaanlage' },
-      { variant: 'pipes', alt: 'Kältemittelleitungen im Gebäuderinneren' },
-      { variant: 'control', alt: 'Regelungspanel der Klimazentrale' },
+      { variant: 'units', image: '/images/about.jpg', alt: 'Anlagentechnik der Klimatisierung im Gebäudenumfeld' },
+      { variant: 'pipes', image: '/images/planning.jpg', alt: 'Planungsunterlagen zum Mehrzonensystem' },
+      { variant: 'control', image: '/images/installation.jpg', alt: 'Montage und Umsetzung der Klimaanlage' },
     ],
   },
   {
     slug: 'vrf-mehrzonensystem',
+    heroImage: '/images/vrf1.jpg',
     num: '02',
     category: 'VRF',
     title: 'VRF-Mehrzonensystem',
@@ -67,13 +70,14 @@ export const projects: Project[] = [
       'Ein flexibles System, das den Betrieb an wechselnde Nutzungsprofile anpasst – dokumentiert, eingeregelt und technisch betreut.',
     heroVariant: 'rooftop',
     gallery: [
-      { variant: 'rooftop', alt: 'Außeneinheiten eines VRF-Systems am Dach' },
-      { variant: 'macro', alt: 'Detailansicht eines Anschlusses der Kältemittelleitungen' },
-      { variant: 'plan', alt: 'Auslegungsplan des VRF-Mehrzonensystems' },
+      { variant: 'rooftop', image: '/images/vrf.jpg', alt: 'Außeneinheitentechnik des VRF-Systems' },
+      { variant: 'macro', image: '/images/systems.jpg', alt: 'Anlagentechnik der Kältemittelseite' },
+      { variant: 'plan', image: '/images/planning1.jpg', alt: 'Dokumentation und Auslegung des Mehrzonensystems' },
     ],
   },
   {
     slug: 'gewerbekuehlung',
+    heroImage: '/images/project1.jpg',
     num: '03',
     category: 'Kältetechnik',
     title: 'Gewerbekühllösung',
@@ -93,13 +97,14 @@ export const projects: Project[] = [
       'Ein stabiler, zuverlässiger Anlagenbetrieb – mit dokumentiertem Zustand als Basis für künftige Wartung.',
     heroVariant: 'macro',
     gallery: [
-      { variant: 'macro', alt: 'Komponenten der gewerblichen Kühlanlage im Detail' },
-      { variant: 'control', alt: 'Überprüfung der Regelungsparameter' },
-      { variant: 'pipes', alt: 'Leitungsführung der Kühlanlage' },
+      { variant: 'macro', image: '/images/edv.jpg', alt: 'Technik der gewerblichen Kühlanlage' },
+      { variant: 'control', image: '/images/installation.jpg', alt: 'Umsetzung und Behebung vor Ort' },
+      { variant: 'pipes', image: '/images/planning1.jpg', alt: 'Dokumentation des Anlagenzustands' },
     ],
   },
   {
     slug: 'bestandsanlage-wartung',
+    heroImage: '/images/mobile-workshop.jpg',
     num: '04',
     category: 'Wartung',
     title: 'Bestandsanlage — Wartung & Optimierung',
@@ -119,9 +124,9 @@ export const projects: Project[] = [
       'Ein transparenter Anlagenzustand, eine belastbare Dokumentation und eine Optimierungsgrundlage für den weiteren Betrieb.',
     heroVariant: 'control',
     gallery: [
-      { variant: 'control', alt: 'Kontrolle der Anlagenparameter bei der Wartung' },
-      { variant: 'plan', alt: 'Dokumentierte Systemunterlagen der Anlage' },
-      { variant: 'room', alt: 'Technischer Raum der bestehenden Anlage' },
+      { variant: 'control', image: '/images/experience.jpg', alt: 'Kontrolle und Überprüfung der Bestandsanlage' },
+      { variant: 'plan', image: '/images/heating1.jpg', alt: 'Anlagentechnik im laufenden Betrieb' },
+      { variant: 'room', image: '/images/planning.jpg', alt: 'Unterlagen zur Dokumentation der Anlage' },
     ],
   },
 ]

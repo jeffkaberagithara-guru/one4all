@@ -68,9 +68,10 @@ export default function ProjectDetailPage({ slug }: ProjectDetailPageProps) {
       <Reveal delay={0.1} className="mt-16 lg:mt-20">
         <VideoFrame
           poster={project.heroVariant}
-          alt={'Szenenbild zu ' + project.title}
+          alt={'Ansicht zu ' + project.title}
+          image={project.heroImage}
           ratio="21 / 9"
-          label={'Projektfilm — ' + project.num}
+          label={'Projekt — ' + project.num}
           className="max-h-[78vh]"
         />
       </Reveal>
@@ -101,7 +102,7 @@ export default function ProjectDetailPage({ slug }: ProjectDetailPageProps) {
                 delay={(i % 2) * 0.08}
                 className={i === 0 ? 'md:col-span-7' : 'md:col-span-5'}
               >
-                <MediaFrame variant={image.variant} alt={image.alt} ratio="4 / 3" />
+                <MediaFrame variant={image.variant} src={image.image} alt={image.alt} ratio="4 / 3" />
               </Reveal>
             ))}
           </div>

@@ -22,7 +22,8 @@ export function ProjectCard({ project, ratio = '4 / 3', className }: ProjectCard
     >
       <MediaFrame
         variant={project.heroVariant}
-        alt={'Illustration zu ' + project.title + ' (' + project.category + ')'}
+        src={project.heroImage}
+        alt={'Außenaufnahme zum Projekt ' + project.title + ' (' + project.category + ')'}
         ratio={ratio}
       />
       <div className="mt-6 flex items-start justify-between gap-6">
@@ -97,7 +98,7 @@ export function ProjectsShowcase() {
               <ProjectCard project={third} ratio="4 / 3" />
             </Reveal>
           )}
-          <Reveal delay={0.12} className="flex items-end md:col-span-5 md:col-start-9">
+          <Reveal delay={0.12} className="flex items-end md:col-span-4 md:col-start-9">
             <p className="max-w-xs text-sm leading-relaxed text-muted">
               Beispielhafte Projektdarstellung. Referenzdetails zu konkreten Objekten geben wir auf
               Anfrage gerne weiter.
