@@ -7,12 +7,25 @@ interface VideoFrameProps {
   poster: MediaVariant
   alt: string
   src?: string
+  image?: string
   ratio?: string
   label?: string
   className?: string
+  priority?: boolean
+  position?: string
 }
 
-export function VideoFrame({ poster, alt, src, ratio = '16 / 9', label = 'Film — Loop', className }: VideoFrameProps) {
+export function VideoFrame({
+  poster,
+  alt,
+  src,
+  image,
+  ratio = '16 / 9',
+  label = 'Film — Loop',
+  className,
+  priority,
+  position,
+}: VideoFrameProps) {
   return (
     <div className={cn('group relative overflow-hidden bg-coal', className)}>
       {src ? (
@@ -28,10 +41,29 @@ export function VideoFrame({ poster, alt, src, ratio = '16 / 9', label = 'Film �
           src={src}
         />
       ) : (
-        <MediaFrame variant={poster} alt={alt} ratio={ratio} className="absolute inset-0 [&>div]:h-full [&>div]:w-full" />
+        <div className="absolute inset-0" style={{ aspectRatio: ratio }}>
+          {image ? (
+            <img
+              src={image}
+              alt={alt}
+              loading={priority ? 'eager' : 'lazy'}
+              decoding="async"
+              {...(priority ? { fetchPriority: 'high' as const } : {})}
+              style={position ? { objectPosition: position } : undefined}
+              className="absolute inset-0 h-full w-full object-cover grayscale transition-all duration-[1200ms] ease-out group-hover:scale-[1.02] group-hover:grayscale-0"
+            />
+          ) : (
+            <MediaFrame
+              variant={poster}
+              alt={alt}
+              ratio={ratio}
+              className="absolute inset-0 [&>div]:h-full [&>div]:w-full"
+            />
+          )}
+        </div>
       )}
 
-      {!src && (
+      {!src && !image && (
         <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
           <span className="flex size-16 items-center justify-center rounded-full border border-white/60 bg-black/20 text-white backdrop-blur-sm lg:size-20">
             <Play size={18} fill="currentColor" strokeWidth={0} aria-hidden />
