@@ -26,7 +26,7 @@ const principles = [
 
 export function Principles() {
   return (
-    <section aria-labelledby="warum-heading" className="bg-surface py-24 lg:py-36">
+    <section aria-labelledby="warum-heading" className="bg-surface py-20 lg:py-28">
       <div className="container-x">
         <SectionLabel index="05" title="Warum One4All" />
 
@@ -38,12 +38,12 @@ export function Principles() {
           </h2>
         </MaskReveal>
 
-        <div className="mt-14 grid grid-cols-1 gap-x-8 sm:grid-cols-2 lg:mt-24">
+        <div className="mt-10 grid grid-cols-1 gap-x-8 sm:grid-cols-2 lg:mt-14">
           {principles.map((p, i) => (
             <Reveal
               key={p.num}
               delay={i * 0.08}
-              className="group border-t border-line py-10 sm:odd:pr-10 sm:even:border-l sm:even:pl-10 lg:py-14"
+              className="group border-t border-line py-8 sm:odd:pr-10 sm:even:border-l sm:even:pl-10 lg:py-10"
             >
               <span className="font-display text-6xl font-light tracking-tight text-line transition-colors duration-500 group-hover:text-steel lg:text-7xl">
                 {p.num}

@@ -53,7 +53,7 @@ export function ProjectsShowcase() {
   const [first, second, third] = projects
 
   return (
-    <section id="projekte" aria-labelledby="projekte-heading" className="scroll-mt-28 py-24 lg:py-36">
+    <section id="projekte" aria-labelledby="projekte-heading" className="scroll-mt-28 py-20 lg:py-28">
       <div className="container-x">
         <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
           <div>
@@ -82,15 +82,15 @@ export function ProjectsShowcase() {
           </Reveal>
         </div>
 
-        <div className="mt-14 grid grid-cols-1 gap-x-8 gap-y-16 md:grid-cols-12 lg:mt-24">
+        <div className="mt-10 grid grid-cols-1 gap-x-8 gap-y-14 md:grid-cols-12 lg:mt-16">
           {first && (
             <Reveal className="md:col-span-7">
               <ProjectCard project={first} ratio="16 / 11" />
             </Reveal>
           )}
           {second && (
-            <Reveal delay={0.12} className="md:col-span-5 md:mt-20">
-              <ProjectCard project={second} ratio="4 / 5" />
+            <Reveal delay={0.12} className="md:col-span-5 md:mt-16">
+              <ProjectCard project={second} ratio="1 / 1" />
             </Reveal>
           )}
           {third && (

@@ -3,7 +3,7 @@ import { Reveal } from '../ui/Reveal'
 export function Testimonial() {
   return (
     <section aria-labelledby="kundenstimme-heading" className="bg-coal text-paper">
-      <div className="container-x py-24 lg:py-32">
+      <div className="container-x py-20 lg:py-28">
         <p id="kundenstimme-heading" className="label-mono text-paper/50">
           Kundenstimme
         </p>

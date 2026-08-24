@@ -28,8 +28,8 @@ export default function ProjectsPage() {
         intro="Ein Auszug typischer Projektkonstellationen aus der täglichen Arbeit. Referenzdetails zu konkreten Objekten geben wir auf Anfrage gerne weiter."
       />
 
-      <section aria-label="Projektübersicht" className="py-20 lg:py-28">
-        <div className="container-x grid grid-cols-1 gap-x-8 gap-y-16 md:grid-cols-12">
+      <section aria-label="Projektübersicht" className="py-16 lg:py-24">
+        <div className="container-x grid grid-cols-1 gap-x-8 gap-y-14 md:grid-cols-12">
           {projects.map((project, i) => (
             <Reveal
               key={project.slug}
@@ -38,13 +38,13 @@ export default function ProjectsPage() {
                 i % 4 === 0
                   ? 'md:col-span-7'
                   : i % 4 === 1
-                    ? 'md:col-span-5 md:mt-16'
+                    ? 'md:col-span-5 md:mt-12'
                     : i % 4 === 2
                       ? 'md:col-span-5 md:col-start-2'
-                      : 'md:col-span-5 md:col-start-8'
+                      : 'md:col-span-5 md:col-start-8 md:mt-12'
               }
             >
-              <ProjectCard project={project} ratio={i % 4 === 0 ? '16 / 11' : '4 / 3'} />
+              <ProjectCard project={project} ratio={i % 4 === 0 ? '16 / 11' : i % 4 === 1 ? '1 / 1' : '4 / 3'} />
             </Reveal>
           ))}
         </div>

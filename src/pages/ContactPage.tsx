@@ -49,7 +49,7 @@ export default function ContactPage() {
         intro="Sie planen eine neue Kälte- oder Klimaanlage, benötigen Unterstützung bei einem bestehenden System oder möchten eine technische Lösung besprechen?"
       />
 
-      <section aria-label="Anfrage senden" className="py-20 lg:py-28">
+      <section aria-label="Anfrage senden" className="py-16 lg:py-24">
         <div className="container-x grid grid-cols-1 gap-16 lg:grid-cols-12 lg:gap-x-8">
           <div className="lg:col-span-5">
             <Reveal>

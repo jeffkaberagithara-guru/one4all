@@ -13,7 +13,7 @@ const focusAreas = [
 
 export function Specialization() {
   return (
-    <section aria-labelledby="fokus-heading" className="bg-surface py-24 lg:py-36">
+    <section aria-labelledby="fokus-heading" className="bg-surface py-20 lg:py-28">
       <div className="container-x">
         <SectionLabel index="03" title="Spezialisierung" />
 
@@ -23,7 +23,7 @@ export function Specialization() {
           </h2>
         </MaskReveal>
 
-        <div className="mt-14 lg:mt-20">
+        <div className="mt-10 lg:mt-14">
           {focusAreas.map((area, i) => (
             <div key={area.word} className="border-t border-line last:border-b">
               <Link
@@ -48,7 +48,7 @@ export function Specialization() {
           ))}
         </div>
 
-        <div className="mt-16 grid grid-cols-1 gap-10 lg:mt-24 lg:grid-cols-12 lg:gap-x-8">
+        <div className="mt-12 grid grid-cols-1 gap-10 lg:mt-16 lg:grid-cols-12 lg:gap-x-8">
           <Reveal className="lg:col-span-8">
             <MediaFrame
               variant="units"

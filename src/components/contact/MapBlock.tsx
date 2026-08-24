@@ -4,7 +4,7 @@ import { Reveal, MaskReveal } from '../ui/Reveal'
 
 export function MapBlock() {
   return (
-    <section aria-labelledby="standort-heading" className="border-t border-line bg-surface py-24 lg:py-32">
+    <section aria-labelledby="standort-heading" className="border-t border-line bg-surface py-20 lg:py-28">
       <div className="container-x">
         <MaskReveal>
           <h2 id="standort-heading" className="font-display text-[clamp(1.75rem,3vw,2.75rem)] font-light tracking-tight">

@@ -12,7 +12,7 @@ const steps = [
 
 export function ProcessTimeline() {
   return (
-    <section aria-labelledby="ablauf-heading" className="py-24 lg:py-36">
+    <section aria-labelledby="ablauf-heading" className="py-20 lg:py-28">
       <div className="container-x">
         <SectionLabel index="06" title="Ablauf" />
 
@@ -24,7 +24,7 @@ export function ProcessTimeline() {
           </h2>
         </MaskReveal>
 
-        <ol className="mt-14 grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 xl:grid-cols-6 lg:mt-20">
+        <ol className="mt-10 grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 xl:grid-cols-6 lg:mt-14">
           {steps.map((step, i) => (
             <li key={step.num} className="group border-t border-line pt-6">
               <Reveal delay={i * 0.06}>

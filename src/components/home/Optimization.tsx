@@ -7,9 +7,9 @@ const stages = ['Bestand', 'Analyse', 'Optimierung', 'Betrieb']
 
 export function Optimization() {
   return (
-    <section aria-labelledby="optimierung-heading" className="bg-surface py-24 lg:py-36">
-      <div className="container-x grid grid-cols-1 gap-14 lg:grid-cols-12 lg:gap-x-8">
-        <div className="lg:col-span-6">
+    <section aria-labelledby="optimierung-heading" className="bg-surface py-20 lg:py-28">
+      <div className="container-x grid grid-cols-1 gap-12 sm:grid-cols-12 lg:gap-x-8">
+        <div className="sm:col-span-6">
           <MaskReveal>
             <h2 id="optimierung-heading" className="h-section font-display">
               Bestehende Anlagen
@@ -18,14 +18,14 @@ export function Optimization() {
             </h2>
           </MaskReveal>
           <Reveal delay={0.15}>
-            <p className="lead mt-10 max-w-md">
+            <p className="lead mt-8 max-w-md">
               One4All überprüft bestehende Objekte und Anlagen und unterstützt bei der Optimierung
               von Betriebskosten.
             </p>
           </Reveal>
         </div>
 
-        <Reveal delay={0.2} className="lg:col-span-5 lg:col-start-8">
+        <Reveal delay={0.2} className="sm:col-span-5 sm:col-start-8">
           <ol className="mx-auto flex max-w-xs flex-col items-stretch lg:ml-auto lg:mr-0" aria-label="Prozess der Betriebsoptimierung">
             {stages.map((stage, i) => (
               <li key={stage} className="flex flex-col items-stretch">
@@ -48,12 +48,12 @@ export function Optimization() {
         </Reveal>
       </div>
 
-      <Reveal delay={0.15} className="container-x mt-14 lg:mt-20">
+      <Reveal delay={0.15} className="container-x mt-10 lg:mt-14">
         <MediaFrame
           variant="room"
           src={images.optimizationPlant}
           alt="Bestehende Anlagentechnik im Betrieb – Wartung und Optimierung durch One4All"
-          ratio="21 / 9"
+          ratio="2 / 1"
           caption="Betrieb — Anlagentechnik"
         />
       </Reveal>

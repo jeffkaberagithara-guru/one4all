@@ -5,7 +5,7 @@ import { site } from '../../data/site'
 export function Footer() {
   return (
     <footer className="bg-coal text-paper">
-      <div className="container-x pb-10 pt-20 lg:pt-28">
+      <div className="container-x pb-10 pt-16 lg:pt-24">
         <Link to="/" className="group inline-block" aria-label="Zur Startseite">
           <span className="block font-display text-[clamp(3.5rem,13vw,13rem)] font-medium leading-[0.9] tracking-tightest transition-opacity duration-500 group-hover:opacity-80">
             ONE4ALL
@@ -13,7 +13,7 @@ export function Footer() {
           <span className="label-mono mt-4 block text-paper/50">Kälte &amp; Klimatechnik</span>
         </Link>
 
-        <div className="mt-16 grid grid-cols-2 gap-x-8 gap-y-12 border-t border-white/10 pt-12 md:grid-cols-12 lg:mt-24">
+        <div className="mt-16 grid grid-cols-2 gap-x-8 gap-y-12 border-t border-white/10 pt-12 md:grid-cols-12 lg:mt-16">
           <nav aria-label="Footer Navigation" className="md:col-span-3">
             <h2 className="label-mono mb-6 text-paper/40">Navigation</h2>
             <ul className="space-y-3">

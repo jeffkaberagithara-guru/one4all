@@ -5,7 +5,7 @@ import { images } from '../../data/images'
 export function FilmBreak() {
   return (
     <section aria-labelledby="film-heading" className="bg-coal text-paper">
-      <div className="container-x py-24 lg:py-36">
+      <div className="container-x py-20 lg:py-28">
         <p className="label-mono text-paper/50">Technik in Bewegung</p>
 
         <Reveal delay={0.1}>
@@ -16,7 +16,7 @@ export function FilmBreak() {
           </h2>
         </Reveal>
 
-        <Reveal delay={0.18} className="mt-14 lg:mt-20">
+        <Reveal delay={0.18} className="mt-10 lg:mt-14">
           <VideoFrame
             poster="pipes"
             alt="Anlagentechnik von One4All – Kälte- und Klimasysteme im Detail"

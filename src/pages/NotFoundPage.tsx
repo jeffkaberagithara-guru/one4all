@@ -9,7 +9,7 @@ export default function NotFoundPage() {
   })
 
   return (
-    <section aria-label="Seite nicht gefunden" className="container-x flex min-h-[72vh] flex-col justify-center py-32">
+    <section aria-label="Seite nicht gefunden" className="container-x flex min-h-[60vh] flex-col justify-center py-20">
       <p className="label-mono text-muted">Fehler 404</p>
       <MaskReveal delay={0.05}>
         <h1 className="h-display mt-8 font-display">404</h1>

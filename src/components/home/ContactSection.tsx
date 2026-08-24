@@ -6,7 +6,7 @@ import { site } from '../../data/site'
 
 export function ContactSection() {
   return (
-    <section id="kontakt" aria-labelledby="kontakt-heading" className="scroll-mt-28 py-24 lg:py-36">
+    <section id="kontakt" aria-labelledby="kontakt-heading" className="scroll-mt-28 py-20 lg:py-28">
       <div className="container-x">
         <SectionLabel index="08" title="Kontakt" />
 
@@ -18,8 +18,8 @@ export function ContactSection() {
           </h2>
         </MaskReveal>
 
-        <div className="mt-14 grid grid-cols-1 gap-14 lg:mt-20 lg:grid-cols-12 lg:gap-x-8">
-          <Reveal delay={0.15} className="lg:col-span-6">
+        <div className="mt-10 grid grid-cols-1 gap-12 sm:grid-cols-12 lg:mt-14 lg:gap-x-8">
+          <Reveal delay={0.15} className="sm:col-span-6">
             <p className="lead max-w-lg">
               Sie planen eine neue Kälte- oder Klimaanlage, benötigen Unterstützung bei einem
               bestehenden System oder möchten eine technische Lösung besprechen?
@@ -29,7 +29,7 @@ export function ContactSection() {
             </div>
           </Reveal>
 
-          <Reveal delay={0.25} className="lg:col-span-5 lg:col-start-8">
+          <Reveal delay={0.25} className="sm:col-span-5 sm:col-start-8">
             <address className="not-italic">
               <ul className="space-y-7 border-t border-line pt-10">
                 <li>

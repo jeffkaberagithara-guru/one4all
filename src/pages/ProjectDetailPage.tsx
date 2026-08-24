@@ -36,7 +36,7 @@ export default function ProjectDetailPage({ slug }: ProjectDetailPageProps) {
 
   return (
     <>
-      <header className="pt-36 lg:pt-44">
+      <header className="pt-32 lg:pt-40">
         <div className="container-x">
           <BackLink to="/projekte">Alle Projekte</BackLink>
 
@@ -65,18 +65,17 @@ export default function ProjectDetailPage({ slug }: ProjectDetailPageProps) {
         </div>
       </header>
 
-      <Reveal delay={0.1} className="mt-16 lg:mt-20">
+      <Reveal delay={0.1} className="container-x mt-12 lg:mt-16">
         <VideoFrame
           poster={project.heroVariant}
           alt={'Ansicht zu ' + project.title}
           image={project.heroImage}
-          ratio="21 / 9"
+          ratio="2 / 1"
           label={'Projekt — ' + project.num}
-          className="max-h-[78vh]"
         />
       </Reveal>
 
-      <section aria-label="Projektbeschreibung" className="py-20 lg:py-28">
+      <section aria-label="Projektbeschreibung" className="py-16 lg:py-24">
         <div className="container-x grid grid-cols-1 gap-x-8 gap-y-14 md:grid-cols-12">
           <div className="md:col-span-3">
             <p className="label-mono text-muted">Zum Projekt</p>
@@ -92,9 +91,9 @@ export default function ProjectDetailPage({ slug }: ProjectDetailPageProps) {
         </div>
       </section>
 
-      <section aria-label="Bildergalerie" className="bg-surface py-20 lg:py-28">
+      <section aria-label="Bildergalerie" className="bg-surface py-16 lg:py-24">
         <div className="container-x">
-          <p className="label-mono mb-12 text-muted">Galerie</p>
+          <p className="label-mono mb-10 text-muted">Galerie</p>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-12">
             {project.gallery.map((image, i) => (
               <Reveal
@@ -109,7 +108,7 @@ export default function ProjectDetailPage({ slug }: ProjectDetailPageProps) {
         </div>
       </section>
 
-      <section aria-label="Kontakt zum Projekt" className="border-b border-line py-20 lg:py-24">
+      <section aria-label="Kontakt zum Projekt" className="border-b border-line py-16 lg:py-20">
         <div className="container-x flex flex-col items-start justify-between gap-10 lg:flex-row lg:items-center">
           <h2 className="max-w-xl font-display text-[clamp(1.75rem,3vw,2.75rem)] font-light leading-tight tracking-tight">
             Ähnliches Projekt geplant?
