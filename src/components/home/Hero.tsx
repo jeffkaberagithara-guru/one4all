@@ -20,8 +20,8 @@ export function Hero() {
 
   return (
     <section ref={sectionRef} className="relative overflow-hidden pt-28 lg:pt-36" aria-label="Intro">
-      <div className="container-x relative z-10 grid grid-cols-1 items-start gap-12 pb-14 lg:grid-cols-12 lg:gap-x-8 lg:pb-20">
-        <div className="flex min-h-[46vh] flex-col justify-center pt-6 sm:min-h-[54vh] lg:col-span-7 lg:min-h-[64vh] xl:col-span-6">
+      <div className="container-x relative z-10 grid grid-cols-1 items-end gap-10 pb-12 lg:grid-cols-12 lg:gap-x-8 lg:pb-16">
+        <div className="lg:col-span-6">
           <motion.p
             className="label-mono text-muted"
             initial={reduced ? false : { opacity: 0 }}
@@ -62,15 +62,15 @@ export function Hero() {
           </motion.div>
         </div>
 
-        <div className="lg:col-span-5 lg:col-start-8 lg:row-span-2 lg:self-stretch xl:col-span-7 xl:col-start-6">
+        <div className="lg:col-span-6 lg:self-stretch">
           <motion.div
-            className="relative h-[52vh] overflow-hidden lg:h-full lg:min-h-[72vh]"
+            className="relative h-72 overflow-hidden sm:h-[44vh] lg:h-full"
             initial={reduced ? false : { clipPath: 'inset(4% 4% 100% 4%)' }}
             animate={{ clipPath: 'inset(4% 4% 0% 4%)' }}
             transition={{ duration: 1.2, ease: EASE, delay: 0.45 }}
           >
             <motion.div
-              className="absolute inset-x-0 -top-[8%] h-[116%] will-change-transform"
+              className="absolute inset-x-0 -top-[6%] h-[112%] will-change-transform"
               style={reduced ? undefined : { y: mediaY }}
             >
               <VideoFrame
@@ -78,9 +78,9 @@ export function Hero() {
                 alt="Kälte- und Klimatechnik im Einsatz – Anlagenfoto One4All"
                 image={images.heroRooftop}
                 priority
-                ratio="4 / 3"
+                ratio={null}
                 label="One4All — Anlagentechnik"
-                className="absolute inset-0"
+                className="!absolute inset-0"
               />
             </motion.div>
           </motion.div>

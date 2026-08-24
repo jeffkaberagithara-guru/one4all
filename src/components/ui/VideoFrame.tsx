@@ -8,7 +8,8 @@ interface VideoFrameProps {
   alt: string
   src?: string
   image?: string
-  ratio?: string
+  /** Pass null when the frame is absolutely positioned and must stretch to its container. */
+  ratio?: string | null
   label?: string
   className?: string
   priority?: boolean
@@ -27,7 +28,10 @@ export function VideoFrame({
   position,
 }: VideoFrameProps) {
   return (
-    <div className={cn('group relative overflow-hidden bg-coal', className)} style={{ aspectRatio: ratio }}>
+    <div
+      className={cn('group relative overflow-hidden bg-coal', className)}
+      style={ratio ? { aspectRatio: ratio } : undefined}
+    >
       {src ? (
         <video
           className="absolute inset-0 h-full w-full object-cover"
@@ -55,7 +59,7 @@ export function VideoFrame({
             <MediaFrame
               variant={poster}
               alt={alt}
-              ratio={ratio}
+              ratio={ratio ?? undefined}
               className="absolute inset-0 [&>div]:h-full [&>div]:w-full"
             />
           )}
