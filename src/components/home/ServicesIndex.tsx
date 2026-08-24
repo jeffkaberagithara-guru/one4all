@@ -1,7 +1,6 @@
-import { useRef, useState } from 'react'
-import type { MouseEvent } from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { AnimatePresence, motion, useMotionValue, useReducedMotion, useSpring } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import { ArrowUpRight, Plus } from 'lucide-react'
 import { services } from '../../data/services'
 import { cn } from '../../lib/utils'
@@ -10,26 +9,10 @@ import { Reveal, MaskReveal } from '../ui/Reveal'
 import { SectionLabel } from '../ui/SectionLabel'
 
 export function ServicesIndex({ showLabel = true }: { showLabel?: boolean }) {
-  const listRef = useRef<HTMLDivElement>(null)
-  const [hovered, setHovered] = useState<number | null>(null)
   const [expanded, setExpanded] = useState<number | null>(null)
-  const reduced = useReducedMotion()
-
-  const mx = useMotionValue(0)
-  const my = useMotionValue(0)
-  const px = useSpring(mx, { stiffness: 160, damping: 22, mass: 0.45 })
-  const py = useSpring(my, { stiffness: 160, damping: 22, mass: 0.45 })
-
-  const handleMove = (e: MouseEvent) => {
-    if (reduced) return
-    const rect = listRef.current?.getBoundingClientRect()
-    if (!rect) return
-    mx.set(e.clientX - rect.left)
-    my.set(e.clientY - rect.top)
-  }
 
   return (
-    <section id="leistungen" aria-labelledby="leistungen-heading" className="scroll-mt-28 py-24 lg:py-36">
+    <section id="leistungen" aria-labelledby="leistungen-heading" className="scroll-mt-28 py-20 lg:py-28">
       <div className="container-x">
         {showLabel ? <SectionLabel index="02" title="Leistungen" /> : null}
 
@@ -49,7 +32,7 @@ export function ServicesIndex({ showLabel = true }: { showLabel?: boolean }) {
         </div>
       </div>
 
-      <div className="mt-14 border-t border-line lg:mt-20" />
+      <div className="mt-10 border-t border-line lg:mt-14" />
 
       {/* Mobile / Tablet: Accordion */}
       <div className="container-x lg:hidden">
@@ -113,52 +96,14 @@ export function ServicesIndex({ showLabel = true }: { showLabel?: boolean }) {
         })}
       </div>
 
-      {/* Desktop: interactive rows with cursor-following preview */}
-      <div
-        ref={listRef}
-        onMouseMove={handleMove}
-        onMouseLeave={() => setHovered(null)}
-        className="relative hidden lg:block"
-      >
-        {!reduced && (
-          <motion.div
-            aria-hidden
-            className="pointer-events-none absolute left-0 top-0 z-20 hidden xl:block"
-            style={{ x: px, y: py }}
-          >
-            <AnimatePresence mode="popLayout">
-              {hovered !== null && services[hovered] && (
-                <motion.div
-                  key={services[hovered].slug}
-                  initial={{ opacity: 0, scale: 0.94 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.96 }}
-                  transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                  className="-translate-x-1/2 -translate-y-1/2"
-                >
-                  <MediaFrame
-                    variant={services[hovered].variant}
-                    src={services[hovered].image}
-                    alt=""
-                    ratio="3 / 2"
-                    caption={services[hovered].name.toUpperCase()}
-                    className="w-[26rem] shadow-none"
-                  />
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </motion.div>
-        )}
-
+      {/* Desktop: interactive rows */}
+      <div className="relative hidden lg:block">
         <ul>
-          {services.map((service, i) => (
+          {services.map((service) => (
             <li key={service.slug} className="border-b border-line">
               <Link
                 to={'/leistungen/' + service.slug}
-                onMouseEnter={() => setHovered(i)}
-                onFocus={() => setHovered(i)}
-                onBlur={() => setHovered(null)}
-                className="group grid grid-cols-12 items-center gap-4 bg-transparent py-9 pl-6 pr-6 transition-colors duration-300 hover:bg-surface focus-visible:bg-surface xl:pl-8 xl:pr-8"
+                className="group grid grid-cols-12 items-center gap-4 bg-transparent py-7 pl-6 pr-6 transition-colors duration-300 hover:bg-surface focus-visible:bg-surface xl:py-8 xl:pl-8 xl:pr-8"
                 aria-label={service.name + ' – ' + service.tagline}
               >
                 <span className="label-mono col-span-1 text-muted transition-colors duration-300 group-hover:text-ink">
