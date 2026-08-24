@@ -6,12 +6,12 @@ import { images } from '../../data/images'
 
 export function FounderSection() {
   return (
-    <section aria-labelledby="gruender-heading" className="py-24 lg:py-36">
+    <section aria-labelledby="gruender-heading" className="py-20 lg:py-28">
       <div className="container-x">
         <SectionLabel index="07" title="Gründer" />
 
-        <div className="mt-12 grid grid-cols-1 gap-14 lg:mt-16 lg:grid-cols-12 lg:gap-x-8">
-          <div className="lg:col-span-7">
+        <div className="mt-10 grid grid-cols-1 gap-10 sm:grid-cols-12 lg:mt-14 lg:gap-x-8">
+          <div className="sm:col-span-7">
             <MaskReveal delay={0.05}>
               <h2 id="gruender-heading" className="h-section font-display">
                 {site.founder.split(' ')[0]}
@@ -36,13 +36,14 @@ export function FounderSection() {
             </Reveal>
           </div>
 
-          <Reveal delay={0.15} className="lg:col-span-4 lg:col-start-9">
+          <Reveal delay={0.15} className="flex sm:col-span-5 lg:col-span-4 lg:col-start-9">
             <MediaFrame
               variant="plan"
-              ratio="3 / 4"
+              ratio={null}
               alt="Mobile Werkstatt von One4All – Technik für den Einsatz vor Ort"
               src={images.founderWorkshop}
               caption="Technik & Werkstatt"
+              className="w-full aspect-[3/2] sm:aspect-auto"
             />
           </Reveal>
         </div>

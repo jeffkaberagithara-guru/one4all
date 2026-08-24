@@ -31,7 +31,7 @@ export default function ServiceDetailPage({ slug }: ServiceDetailPageProps) {
 
   return (
     <>
-      <header className="pt-36 lg:pt-44">
+      <header className="pt-32 lg:pt-40">
         <div className="container-x">
           <BackLink to="/leistungen">Alle Leistungen</BackLink>
 
@@ -45,19 +45,20 @@ export default function ServiceDetailPage({ slug }: ServiceDetailPageProps) {
         </div>
       </header>
 
-      <section aria-label="Überblick" className="py-16 lg:py-24">
-        <div className="container-x grid grid-cols-1 gap-14 lg:grid-cols-12 lg:gap-x-8">
-          <div className="lg:col-span-5">
-            <Reveal>
+      <section aria-label="Überblick" className="py-14 lg:py-20">
+        <div className="container-x grid grid-cols-1 gap-10 sm:grid-cols-12 lg:gap-x-8">
+          <Reveal className="sm:col-span-6 lg:col-span-5">
+            <div className="lg:sticky lg:top-28">
               <MediaFrame
                 variant={service.variant}
                 src={service.image}
                 alt={'Praxisaufnahme zum Leistungsbereich ' + service.name}
-                ratio="4 / 5"
+                ratio="4 / 3"
                 caption={'Leistung ' + service.num}
+                position="center 40%"
               />
-            </Reveal>
-          </div>
+            </div>
+          </Reveal>
 
           <div className="lg:col-span-6 lg:col-start-7">
             {service.body.map((paragraph, i) => (

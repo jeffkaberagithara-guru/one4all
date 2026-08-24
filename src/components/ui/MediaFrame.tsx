@@ -17,7 +17,8 @@ const scenes: Record<MediaVariant, Scene> = {
 interface MediaFrameProps {
   variant: MediaVariant
   alt: string
-  ratio?: string
+  /** Pass null to let the frame stretch to its container (container must provide the size). */
+  ratio?: string | null
   caption?: string
   className?: string
   src?: string
@@ -29,12 +30,13 @@ export function MediaFrame({ variant, alt, ratio = '4 / 3', caption, className, 
   const rawId = useId()
   const uid = `g${rawId.replace(/[^a-zA-Z0-9]/g, '')}`
   const Scene = scenes[variant]
+  const frameStyle = ratio ? { aspectRatio: ratio } : undefined
 
   if (src) {
     return (
       <figure
         className={cn('group relative overflow-hidden bg-surface', className)}
-        style={{ aspectRatio: ratio }}
+        style={frameStyle}
       >
         <div className="absolute inset-0">
           <img
@@ -66,7 +68,7 @@ export function MediaFrame({ variant, alt, ratio = '4 / 3', caption, className, 
       role="img"
       aria-label={alt}
       className={cn('group relative overflow-hidden bg-surface', className)}
-      style={{ aspectRatio: ratio }}
+      style={frameStyle}
     >
       <div className="absolute inset-0">
         <svg

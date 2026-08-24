@@ -4,36 +4,45 @@ import { Reveal, MaskReveal } from '../ui/Reveal'
 import { SectionLabel } from '../ui/SectionLabel'
 import { images } from '../../data/images'
 
-export function AboutPreview({ showLabel = true }: { showLabel?: boolean }) {
+export function AboutPreview({
+  showLabel = true,
+  heading = 'Wer wir sind',
+  subheading = 'Technik, die weiterdenkt.',
+}: {
+  showLabel?: boolean
+  heading?: string
+  subheading?: string
+}) {
   return (
-    <section id="ueber-uns" aria-labelledby="ueber-uns-heading" className="scroll-mt-28 py-24 lg:py-36">
+    <section id="ueber-uns" aria-labelledby="ueber-uns-heading" className="scroll-mt-28 py-20 lg:py-28">
       <div className="container-x">
         {showLabel ? <SectionLabel index="01" title="Über uns" /> : null}
 
         <MaskReveal delay={0.1}>
           <h2 id="ueber-uns-heading" className={'h-section font-display' + (showLabel ? ' mt-12 lg:mt-16' : '')}>
-            Wer wir sind
+            {heading}
           </h2>
         </MaskReveal>
 
-        <div className="mt-14 grid grid-cols-1 gap-12 lg:mt-20 lg:grid-cols-12 lg:gap-x-8">
-          <Reveal className="lg:col-span-5">
+        <div className="mt-10 grid grid-cols-1 gap-10 sm:grid-cols-12 lg:mt-14 lg:gap-x-8">
+          <Reveal className="flex sm:col-span-6 lg:col-span-5">
             <MediaFrame
               variant="room"
-              ratio="4 / 5"
+              ratio={null}
               alt="One4All Kälte & Klimatechnik – Einblick in unsere Arbeit"
               src={images.aboutRoom}
               caption="Aus der Praxis"
+              className="w-full aspect-[4/3] sm:aspect-auto"
             />
           </Reveal>
 
-          <div className="flex flex-col justify-between lg:col-span-6 lg:col-start-7">
+          <div className="flex flex-col justify-between gap-10 sm:col-span-6 lg:col-span-6 lg:col-start-7">
             <div>
-              <Reveal delay={0.1}>
+              <MaskReveal delay={0.1}>
                 <h3 className="font-display text-3xl font-light tracking-tight sm:text-4xl">
-                  Technik, die weiterdenkt.
+                  {subheading}
                 </h3>
-              </Reveal>
+              </MaskReveal>
               <Reveal delay={0.18}>
                 <p className="lead mt-8 max-w-xl">
                   One4All Kälte &amp; Klimatechnik e.U. wurde 2017 von Robert Mierczynski gegründet.
@@ -50,7 +59,7 @@ export function AboutPreview({ showLabel = true }: { showLabel?: boolean }) {
               </Reveal>
             </div>
 
-            <Reveal delay={0.3} className="mt-12 border-t border-line pt-8">
+            <Reveal delay={0.3} className="border-t border-line pt-8">
               <ButtonLink to="/ueber-uns" variant="ghost">
                 Mehr über One4All
               </ButtonLink>

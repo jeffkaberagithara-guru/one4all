@@ -33,11 +33,11 @@ export default function AboutPage() {
         intro="Ein Unternehmen, das Technik nicht als Selbstzweck versteht – sondern als Grundlage für verlässlichen Betrieb."
       />
 
-      <AboutPreview showLabel={false} />
+      <AboutPreview showLabel={false} heading="Das Unternehmen." subheading="Präzision als Standard." />
 
-      <section aria-labelledby="anspruch-heading" className="border-y border-line bg-surface py-24 lg:py-32">
-        <div className="container-x grid grid-cols-1 gap-14 lg:grid-cols-12 lg:gap-x-8">
-          <div className="lg:col-span-7">
+      <section aria-labelledby="anspruch-heading" className="border-y border-line bg-surface py-20 lg:py-28">
+        <div className="container-x grid grid-cols-1 gap-10 sm:grid-cols-12 lg:gap-x-8">
+          <div className="sm:col-span-7">
             <MaskReveal>
               <h2 id="anspruch-heading" className="font-display text-[clamp(1.9rem,3.6vw,3.25rem)] font-light leading-[1.15] tracking-tight">
                 Nicht der Hersteller steht im Mittelpunkt.
@@ -46,7 +46,7 @@ export default function AboutPage() {
               </h2>
             </MaskReveal>
             <Reveal delay={0.15}>
-              <p className="lead mt-10 max-w-xl">
+              <p className="lead mt-8 max-w-xl">
                 One4All ist herstellerunabhängig. Das bedeutet: Für jede Anforderung wird die
                 Technologie ausgewählt, die die Aufgabe am besten erfüllt – technisch und
                 wirtschaftlich. Nicht ein Produktkatalog bestimmt die Lösung, sondern das Projekt.
@@ -56,8 +56,8 @@ export default function AboutPage() {
               <ButtonLink to="/leistungen">Leistungen ansehen</ButtonLink>
             </Reveal>
           </div>
-          <Reveal delay={0.2} className="lg:col-span-4 lg:col-start-9">
-            <MediaFrame variant="plan" ratio="3 / 4" alt="One4All Kälte & Klimatechnik – Unternehmen und Technik" src={images.companyClaim} caption="Unternehmen" />
+          <Reveal delay={0.2} className="flex sm:col-span-4 sm:col-start-9">
+            <MediaFrame variant="plan" ratio={null} alt="One4All Kälte & Klimatechnik – Unternehmen und Technik" src={images.companyClaim} caption="Unternehmen" className="w-full aspect-[3/2] sm:aspect-auto" />
           </Reveal>
         </div>
       </section>
